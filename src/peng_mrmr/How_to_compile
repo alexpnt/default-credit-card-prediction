@@ -1,0 +1,7 @@
+To compile just run the following command (suppose you have a GNU type c/c++ compiler):
+
+make -f mrmr.makefile
+
+Then you can run the mrmr command like
+
+./mrmr

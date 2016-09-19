@@ -1,0 +1,1433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>808</width>
+    <height>625</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Default Credit Card Predictor</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="loading_tab">
+       <attribute name="title">
+        <string>Loading</string>
+       </attribute>
+       <widget class="QTextBrowser" name="path_text">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>20</y>
+          <width>591</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="path_label">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>59</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Path</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="browse_file_button">
+        <property name="geometry">
+         <rect>
+          <x>680</x>
+          <y>20</y>
+          <width>85</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Browse File</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="dataset_label">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>80</y>
+          <width>151</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Dataset Characteristics</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="select_feature_label">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>80</y>
+          <width>101</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Select Feature:</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="select_feature_ok">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>80</y>
+          <width>101</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Infer Statistics</string>
+        </property>
+       </widget>
+       <widget class="QTextBrowser" name="dataset_text">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>110</y>
+          <width>331</width>
+          <height>451</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QTextBrowser" name="feature_stats">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>110</y>
+          <width>371</width>
+          <height>361</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="feature_input">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>80</y>
+          <width>91</width>
+          <height>24</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="visualization_tab">
+       <attribute name="title">
+        <string>Feature Assessment/Visualization</string>
+       </attribute>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>751</width>
+          <height>121</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Feature Inspection</string>
+        </property>
+        <widget class="QRadioButton" name="histogram_dist">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>251</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Normalized Histogram Distribution</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="box_plot">
+         <property name="geometry">
+          <rect>
+           <x>250</x>
+           <y>30</y>
+           <width>81</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Box Plot</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="pairwise_histogram">
+         <property name="geometry">
+          <rect>
+           <x>330</x>
+           <y>30</y>
+           <width>171</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Pairwise Relationships</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="plot_figure_button">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>90</y>
+           <width>85</width>
+           <height>26</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Inspect</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="select_feature1_label">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>60</y>
+           <width>101</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Select Feature:</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="feature1_input">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>60</y>
+           <width>91</width>
+           <height>24</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="feature2_input">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>60</y>
+           <width>91</width>
+           <height>24</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="kind_of_diagonal_plot">
+         <property name="geometry">
+          <rect>
+           <x>440</x>
+           <y>60</y>
+           <width>191</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>Histogram</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Kernel Density Estimation</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="diagonal_subplots_label">
+         <property name="geometry">
+          <rect>
+           <x>320</x>
+           <y>60</y>
+           <width>161</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Diagonal Subplots:</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="pca_2d">
+         <property name="geometry">
+          <rect>
+           <x>650</x>
+           <y>60</y>
+           <width>105</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>PCA</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="cdf">
+         <property name="geometry">
+          <rect>
+           <x>500</x>
+           <y>30</y>
+           <width>81</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>CDF/EDF</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="lda">
+         <property name="geometry">
+          <rect>
+           <x>650</x>
+           <y>90</y>
+           <width>71</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>LDA</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="pearson_correlation">
+         <property name="geometry">
+          <rect>
+           <x>590</x>
+           <y>30</y>
+           <width>151</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Pearson Correlation</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="feature_inspection_fig">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>170</y>
+          <width>731</width>
+          <height>381</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="correlation_table">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>170</y>
+          <width>731</width>
+          <height>381</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="preprocessing_tab">
+       <attribute name="title">
+        <string>Preprocessing</string>
+       </attribute>
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>741</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Dataset Transformation</string>
+        </property>
+        <widget class="QRadioButton" name="standardize_radio">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>30</y>
+           <width>161</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Standardize Features</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="scale_minmax_radio">
+         <property name="geometry">
+          <rect>
+           <x>190</x>
+           <y>30</y>
+           <width>211</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Scale Features to range [0,1]</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="scale_absmax_radio">
+         <property name="geometry">
+          <rect>
+           <x>410</x>
+           <y>30</y>
+           <width>211</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Scale Features to range [-1,1]</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="normalize_samples_radio">
+         <property name="geometry">
+          <rect>
+           <x>190</x>
+           <y>60</y>
+           <width>161</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Normalize Samples</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="transform_button">
+         <property name="geometry">
+          <rect>
+           <x>360</x>
+           <y>60</y>
+           <width>111</width>
+           <height>26</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Transform Data</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="reset_button">
+         <property name="geometry">
+          <rect>
+           <x>490</x>
+           <y>60</y>
+           <width>131</width>
+           <height>26</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Reset Original Data</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="normalize_features_radio">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>60</y>
+           <width>161</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Normalize Features</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>120</y>
+          <width>741</width>
+          <height>281</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Dataset Balancing</string>
+        </property>
+        <widget class="QRadioButton" name="ncl_radio">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>150</y>
+           <width>271</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Neighboorhood Cleaning Rule</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="nearmiss_3_radio">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>120</y>
+           <width>271</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>NearMiss-3</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="random_majority_radio">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>60</y>
+           <width>341</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Random Majority Undersampling with Replacement</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="nearmiss_1_radio">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>90</y>
+           <width>311</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>NearMiss-1</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="random_minority_radio">
+         <property name="geometry">
+          <rect>
+           <x>390</x>
+           <y>60</y>
+           <width>341</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Random Minority Oversampling with Replacement</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="smote_radio">
+         <property name="geometry">
+          <rect>
+           <x>390</x>
+           <y>90</y>
+           <width>351</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>SMOTE - Synthetic Minority Oversampling Technique</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>30</y>
+           <width>101</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Undersampling</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_2">
+         <property name="geometry">
+          <rect>
+           <x>390</x>
+           <y>30</y>
+           <width>101</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Oversampling</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="resample_button">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>300</y>
+          <width>85</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Resample</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="reset_button2">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>300</y>
+          <width>131</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Reset Original Data</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="feature_selection_tab">
+       <attribute name="title">
+        <string>Feature Selection/Reduction</string>
+       </attribute>
+       <widget class="QGroupBox" name="groupBox_4">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>751</width>
+          <height>391</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Feature Selection</string>
+        </property>
+        <widget class="QRadioButton" name="mRMR_radio">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>150</y>
+           <width>351</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>minimum Redundancy Maximum Relevance (mRMR)</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="information_gain_radio">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>141</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Information Gain</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="gain_ratio_radio">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>60</y>
+           <width>91</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Gain Ratio</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_3">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>101</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Filter Methods</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_4">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>220</y>
+           <width>131</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Wrapper Methods</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="fisher_score_radio">
+         <property name="geometry">
+          <rect>
+           <x>480</x>
+           <y>60</y>
+           <width>101</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Fisher Score</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="chi_squared_radio">
+         <property name="geometry">
+          <rect>
+           <x>250</x>
+           <y>60</y>
+           <width>101</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Chi Squared</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="kw_radio">
+         <property name="geometry">
+          <rect>
+           <x>360</x>
+           <y>60</y>
+           <width>111</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Kruskal-Wallis</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="pearson_corr_ff_radio">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>90</y>
+           <width>291</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Pearson Correlation (Feature-Feature)</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="auc_radio">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>180</y>
+           <width>311</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Area Under the Curve (AUC) of the ROC curve</string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="n_features_spinBox">
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>310</y>
+           <width>47</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_6">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>310</y>
+           <width>131</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Top Features to Keep:</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="fs_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>300</x>
+           <y>310</y>
+           <width>161</width>
+           <height>26</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Apply Feature Selection</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="reset_button3">
+         <property name="geometry">
+          <rect>
+           <x>470</x>
+           <y>310</y>
+           <width>131</width>
+           <height>26</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Reset Original Data</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="pearson_corr_fc_radio">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>120</y>
+           <width>291</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Pearson Correlation (Feature-Class)</string>
+         </property>
+        </widget>
+        <widget class="QDoubleSpinBox" name="threshold_doubleSpinBox">
+         <property name="geometry">
+          <rect>
+           <x>350</x>
+           <y>110</y>
+           <width>66</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="decimals">
+          <number>2</number>
+         </property>
+         <property name="maximum">
+          <double>1.000000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.010000000000000</double>
+         </property>
+        </widget>
+        <widget class="QLabel" name="threshold_label">
+         <property name="geometry">
+          <rect>
+           <x>280</x>
+           <y>110</y>
+           <width>71</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Threshold:</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="sel_method_comboBox">
+         <property name="geometry">
+          <rect>
+           <x>500</x>
+           <y>150</y>
+           <width>201</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>Additive Combination</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Multiplicative Combination</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="sel_method_label">
+         <property name="geometry">
+          <rect>
+           <x>380</x>
+           <y>150</y>
+           <width>111</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Selection Method:</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="rfe_radio">
+         <property name="geometry">
+          <rect>
+           <x>260</x>
+           <y>250</y>
+           <width>251</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Recursive Feature Elimination (RFE)</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="sfs_radio">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>250</y>
+           <width>241</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sequential Forward Selection (SFS)</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="sbs_radio">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>280</y>
+           <width>251</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sequential Backward Selection (SBS)</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_5">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>360</y>
+          <width>751</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Feature Transformation/Reduction</string>
+        </property>
+        <widget class="QRadioButton" name="lda_radio">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>291</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Fisher's Linear Discriminant Analysis (LDA)</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="pca_radio">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>251</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Principal Component Analysis (PCA)</string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="n_components_spinBox">
+         <property name="geometry">
+          <rect>
+           <x>520</x>
+           <y>30</y>
+           <width>47</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_5">
+         <property name="geometry">
+          <rect>
+           <x>320</x>
+           <y>30</y>
+           <width>191</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Numer of Components to Keep:</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="fr_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>320</x>
+           <y>60</y>
+           <width>161</width>
+           <height>26</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Apply Feature Reduction</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="reset_button4">
+         <property name="geometry">
+          <rect>
+           <x>490</x>
+           <y>60</y>
+           <width>131</width>
+           <height>26</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Reset Original Data</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="classification_tab">
+       <attribute name="title">
+        <string>Classification</string>
+       </attribute>
+       <widget class="QTabWidget" name="tabWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>160</y>
+          <width>771</width>
+          <height>411</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="results">
+         <attribute name="title">
+          <string>Results</string>
+         </attribute>
+         <widget class="QTextBrowser" name="results_textBrowser">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>751</width>
+            <height>361</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="roc">
+         <attribute name="title">
+          <string>ROC Curves</string>
+         </attribute>
+         <widget class="QLabel" name="roc_curves_fig">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>741</width>
+            <height>361</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="precision_recall_roc">
+         <attribute name="title">
+          <string>Precision-Recall Curves</string>
+         </attribute>
+         <widget class="QLabel" name="pr_curves_fig">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>741</width>
+            <height>361</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_6">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>10</y>
+          <width>741</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Classifiers</string>
+        </property>
+        <widget class="QRadioButton" name="min_dist_clf_radio">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>201</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Mininum Distance Classifier</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_7">
+         <property name="geometry">
+          <rect>
+           <x>370</x>
+           <y>120</y>
+           <width>221</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Stratified K-Folds Cross Validation:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="metric_distance_label">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>20</y>
+           <width>101</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Metric Distance: </string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="k_folds_spinBox">
+         <property name="geometry">
+          <rect>
+           <x>580</x>
+           <y>120</y>
+           <width>47</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="minimum">
+          <number>2</number>
+         </property>
+         <property name="value">
+          <number>5</number>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="train_test_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>640</x>
+           <y>120</y>
+           <width>85</width>
+           <height>26</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Train/Test</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="metric_dist_comboBox">
+         <property name="geometry">
+          <rect>
+           <x>330</x>
+           <y>20</y>
+           <width>111</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>Euclidean</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Minkowski</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Manhattan</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Mahalanobis</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QRadioButton" name="knn_radio">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>40</y>
+           <width>61</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>kNN</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="naive_bayes_radio">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>60</y>
+           <width>111</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Naive Bayes</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="svm_radio">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>80</y>
+           <width>61</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>SVM</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="random_forest_radio">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>120</y>
+           <width>121</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Random Forest</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="cart_radio">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>100</y>
+           <width>161</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Decision Tree (CART)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="k_neighbors_label">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>50</y>
+           <width>101</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Nº of Neighbors:</string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="k_neighbors_spinBox">
+         <property name="geometry">
+          <rect>
+           <x>330</x>
+           <y>50</y>
+           <width>47</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="value">
+          <number>5</number>
+         </property>
+        </widget>
+        <widget class="QLabel" name="n_trees_label">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>110</y>
+           <width>71</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Nº of Trees:</string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="n_trees_spinBox">
+         <property name="geometry">
+          <rect>
+           <x>300</x>
+           <y>110</y>
+           <width>47</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="value">
+          <number>10</number>
+         </property>
+        </widget>
+        <widget class="QLabel" name="kernel_function_radio">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>80</y>
+           <width>101</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Kernel Function: </string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="kernenl_function_comboBox">
+         <property name="geometry">
+          <rect>
+           <x>330</x>
+           <y>80</y>
+           <width>161</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>Radial Basis Function</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Linear</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Polymonial</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Sigmoid</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="reg_constant_label">
+         <property name="geometry">
+          <rect>
+           <x>510</x>
+           <y>80</y>
+           <width>21</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>C:</string>
+         </property>
+        </widget>
+        <widget class="QDoubleSpinBox" name="c_doubleSpinBox">
+         <property name="geometry">
+          <rect>
+           <x>530</x>
+           <y>80</y>
+           <width>66</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="value">
+          <double>1.000000000000000</double>
+         </property>
+        </widget>
+        <widget class="QLabel" name="gamma_label">
+         <property name="geometry">
+          <rect>
+           <x>610</x>
+           <y>80</y>
+           <width>41</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Gama:</string>
+         </property>
+        </widget>
+        <widget class="QDoubleSpinBox" name="gamma_doubleSpinBox">
+         <property name="geometry">
+          <rect>
+           <x>660</x>
+           <y>80</y>
+           <width>66</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="value">
+          <double>1.000000000000000</double>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
